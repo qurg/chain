@@ -10,6 +10,7 @@ class Company(models.Model):
         return self.short_name
 
     class Meta:
+        abstract = True
         verbose_name_plural = '合作伙伴'
         verbose_name = '合作伙伴'
 
@@ -28,3 +29,9 @@ class Supplier(Company):
     class Meta:
         verbose_name = '供应商'
         verbose_name_plural = '供应商管理'
+
+
+class Contact(models.Model):
+    name = models.CharField('姓名', max_length=120)
+    email = models.EmailField('邮件')
+    mobile = models.CharField('手机', max_length=60)

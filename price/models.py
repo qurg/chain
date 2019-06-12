@@ -34,6 +34,9 @@ class Inquire(Price):
         verbose_name = '询价'
         verbose_name_plural = '询价管理'
 
+    def __str__(self):
+        return '客户: %s %s-%s 询价' % (self.customer, self.depart, self.destination)
+
 
 class Quote(Price):
     airline = models.CharField('航空公司', max_length=100)

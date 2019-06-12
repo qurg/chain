@@ -1,11 +1,11 @@
 from django.contrib import admin
-from django.contrib.admin import ModelAdmin
-
 
 # Register your models here.
+from import_export.admin import ImportExportModelAdmin
+
 from order.models import TransOrder
 
 
 @admin.register(TransOrder)
-class TransOrderAdmin(ModelAdmin):
+class TransOrderAdmin(ImportExportModelAdmin):
     pass

@@ -15,7 +15,7 @@ admin.site.site_header = '供应链管理'
 
 @admin.register(MyUser)
 class MyUserAdmin(UserAdmin):
-    pass
+    search_fields = ['username']
 
 
 def find_app_index(app_label):

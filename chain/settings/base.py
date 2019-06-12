@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'order.apps.OrderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
     'company.apps.CompanyConfig',
+    'order.apps.OrderConfig',
     'price.apps.PriceConfig',
+    'import_export',
+
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,7 @@ from company.models import Customer, Supplier
 
 @admin.register(Customer)
 class CustomerAdmin(ModelAdmin):
-    pass
+    search_fields = ['name']
 
 
 @admin.register(Supplier)

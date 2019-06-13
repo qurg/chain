@@ -98,16 +98,29 @@ DEBUG = True
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'chain',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'chain',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'Wx@2019&sdf',
+        'HOST': '47.105.130.115',
         'PORT': '3306',
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

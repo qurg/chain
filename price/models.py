@@ -28,7 +28,7 @@ class Inquire(Price):
     trans_time = models.CharField('转运时间', max_length=200)
     remark = models.CharField('备注', max_length=500)
     create_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL,
-                                  default=settings.AUTH_USER_MODEL, verbose_name='创建人')
+                                  verbose_name='创建人')
 
     class Meta:
         verbose_name = '询价'
@@ -40,11 +40,11 @@ class Inquire(Price):
 
 class Quote(Price):
     airline = models.CharField('航空公司', max_length=100)
-    airline_date = models.DateField('航班日期')
-    airline_remark = models.CharField('航司说明', max_length=100)
-    airline_times = models.CharField('航次', max_length=100)
+    airline_date = models.DateField('航班日期', null=True, blank=True, )
+    airline_remark = models.CharField('航司说明', max_length=100, null=True, blank=True, )
+    airline_times = models.CharField('航次', max_length=100, null=True, blank=True, )
     supplier = models.ForeignKey(Supplier, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='供应商')
-    weight_class = models.CharField('重量等级', max_length=100)
+    weight_class = models.CharField('重量等级', max_length=100, null=True, blank=True, )
     cost = models.DecimalField('成本', max_digits=10, decimal_places=2)
     net_rate = models.DecimalField('单价', max_digits=10, decimal_places=2)
     fuel_rate = models.DecimalField('燃油', max_digits=10, decimal_places=2)
@@ -55,7 +55,7 @@ class Quote(Price):
     dim = models.CharField('密度', max_length=100)
     trans_route = models.CharField('路线', max_length=300)
     trans_time = models.CharField('转运时间', max_length=200)
-    quote_remark = models.CharField('报价备注', max_length=500)
+    quote_remark = models.CharField('报价备注', max_length=500, null=True, blank=True, )
     inquire = models.ForeignKey(Inquire, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='询价')
     create_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL,
-                                  default=settings.AUTH_USER_MODEL, verbose_name='创建人')
+                                  verbose_name='创建人')

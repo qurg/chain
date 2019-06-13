@@ -12,4 +12,4 @@ class CustomerAdmin(ModelAdmin):
 
 @admin.register(Supplier)
 class SupplierAdmin(ModelAdmin):
-    pass
+    search_fields = ['name', ]
